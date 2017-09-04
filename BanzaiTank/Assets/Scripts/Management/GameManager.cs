@@ -35,4 +35,8 @@ public class GameManager : MonoBehaviour {
 	public void Replay(){
 		Application.LoadLevel(Application.loadedLevel);
 	}
+
+	public void Exit(){
+		Application.Quit ();
+	}
 }
