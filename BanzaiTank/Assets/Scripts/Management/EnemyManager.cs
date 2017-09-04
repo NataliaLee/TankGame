@@ -11,7 +11,11 @@ public class EnemyManager : MonoBehaviour {
 
 	void Start () {
 		EventManager.StartListening ("PlayerDeath",OnPlayerDeath);
-		InvokeRepeating ("SpawnEnemy",1f,spawn_time);
+		EventManager.StartListening ("Start game",OnStartGame);
+	}
+
+	void OnStartGame(){
+		InvokeRepeating ("SpawnEnemy",1f,spawn_time);		
 	}
 
 	void OnPlayerDeath(){

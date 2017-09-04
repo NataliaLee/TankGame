@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public GameObject gameOverUI;
+	public GameObject startMenuUI;
+	public GameObject playerPrefab;
 
 	static GameManager _instance;
 	public static GameManager instance {
@@ -26,17 +28,27 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void GameOver(){
-		//GameObject gameOver=(GameObject)Instantiate (gameOverUI);
-		//gameOver.transform.SetParent (canvas.transform);
 		gameOverUI.SetActive(true);
 	}
 		
 
 	public void Replay(){
-		Application.LoadLevel(Application.loadedLevel);
+		//Application.LoadLevel(Application.loadedLevel);
+		gameOverUI.SetActive(false);
+		StartGame ();
 	}
 
 	public void Exit(){
 		Application.Quit ();
+	}
+
+	public void Play(){
+		startMenuUI.SetActive (false);
+		StartGame ();
+	}
+
+	void StartGame(){
+		EventManager.TriggerEvent ("Start game");
+		Instantiate (playerPrefab);
 	}
 }

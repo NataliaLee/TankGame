@@ -102,3 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 0}
+  startMenuUI: {fileID: 0}
+  playerPrefab: {fileID: 1702884162654968, guid: 3f9329fe8b04bc84b9d4221e9691bafc,
+    type: 2}
