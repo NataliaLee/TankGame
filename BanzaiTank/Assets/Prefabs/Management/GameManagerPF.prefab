@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1580582266966930}
+  m_IsPrefabParent: 1
+--- !u!1 &1580582266966930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4947994044920306}
+  - component: {fileID: 114894594768652060}
+  - component: {fileID: 114110019376379278}
+  - component: {fileID: 114621683893829978}
+  - component: {fileID: 114091276573016256}
+  m_Layer: 0
+  m_Name: GameManagerPF
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4947994044920306
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580582266966930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114091276573016256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580582266966930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9799e24d8a3f0794aa5905ea059073ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114110019376379278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580582266966930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6ebafcb90022c4180fe25f3d28b831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 0}
+  startMenuUI: {fileID: 0}
+  playerPrefab: {fileID: 1149108296576660, guid: a4a9998bf890c3246ae563f93ca0d9e5,
+    type: 2}
+--- !u!114 &114621683893829978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580582266966930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b80f8cc91a59a14f996a6b1a9a0145c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesPrefabs:
+  - {fileID: 1389246050369744, guid: a0b83e9c0f079f047952b43b397d141e, type: 2}
+  - {fileID: 1705560625418582, guid: ca6a680b100ba5f419b24b2de5e26998, type: 2}
+  maxEnemiesCount: 10
+  spawn_time: 5
+  spawn_offset: 50
+  parentGameObject: {fileID: 0}
+--- !u!114 &114894594768652060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580582266966930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0ae9010c09c9144a14f187a784a25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToPool:
+  - prefab: {fileID: 1358964681289566, guid: cd083ea48d14ae442a18ee15c79a7b25, type: 2}
+    countToPool: 1
+  - prefab: {fileID: 1610380808568630, guid: d3436b24d6ace0c468e3877e321d2d77, type: 2}
+    countToPool: 10
+  - prefab: {fileID: 1382490025498034, guid: 3ad9840876cd6674883861086af6f6ae, type: 2}
+    countToPool: 30

@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour {
 	}
 
 	void OnStartGame(){
-		InvokeRepeating ("SpawnEnemy",1f,spawn_time);		
+		InvokeRepeating ("SpawnEnemyInvoke",1f,spawn_time);		
 	}
 
 	void OnPlayerDeath(){
@@ -23,11 +23,17 @@ public class EnemyManager : MonoBehaviour {
 		CancelInvoke ();
 	}
 
+	void SpawnEnemyInvoke(){
+		int enemiesCount=GameObject.FindGameObjectsWithTag ("Enemy").Length;
+		if (enemiesCount >= maxEnemiesCount) {
+			CancelInvoke ();
+			return;
+		}
+		SpawnEnemy ();
+	}
+
 	public void SpawnEnemy(){
 		if (enemiesPrefabs.Length == 0)
-			return;
-		int enemiesCount=GameObject.FindGameObjectsWithTag ("Enemy").Length;
-		if (enemiesCount >= maxEnemiesCount)
 			return;
 		float x = Screen.width+spawn_offset;
 		float y = Screen.height+spawn_offset;
