@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-	public GameObject gameOverUI;
-	public GameObject startMenuUI;
 	public GameObject playerPrefab;
+
+	public bool inGame = false;
 
 	static GameManager _instance;
 	public static GameManager instance {
@@ -23,32 +23,14 @@ public class GameManager : MonoBehaviour {
 		canvas = FindObjectOfType<Canvas> ();
 	}
 
-	void Start(){
-		EventManager.StartListening ("PlayerDeath",GameOver);
-	}
-
-	public void GameOver(){
-		gameOverUI.SetActive(true);
-	}
-		
-
-	public void Replay(){
-		//Application.LoadLevel(Application.loadedLevel);
-		gameOverUI.SetActive(false);
-		StartGame ();
-	}
-
-	public void Exit(){
-		Application.Quit ();
-	}
-
-	public void Play(){
-		startMenuUI.SetActive (false);
-		StartGame ();
-	}
-
-	void StartGame(){
+	public void StartGame(){
+		inGame = true;
 		EventManager.TriggerEvent ("Start game");
 		Instantiate (playerPrefab);
+	}
+
+	public void Restart(){
+		EventManager.TriggerEvent ("OnRestart");
+		StartGame ();
 	}
 }

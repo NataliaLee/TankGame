@@ -10,16 +10,16 @@ public class EnemyManager : MonoBehaviour {
 	public Transform parentGameObject;
 
 	void Start () {
-		EventManager.StartListening ("PlayerDeath",OnPlayerDeath);
+		EventManager.StartListening ("PlayerDeath",StopInvoke);
 		EventManager.StartListening ("Start game",OnStartGame);
+		EventManager.StartListening ("OnRestart",StopInvoke);
 	}
 
 	void OnStartGame(){
 		InvokeRepeating ("SpawnEnemyInvoke",1f,spawn_time);		
 	}
 
-	void OnPlayerDeath(){
-		EventManager.StopListening ("PlayerDeath", OnPlayerDeath);
+	void StopInvoke(){
 		CancelInvoke ();
 	}
 

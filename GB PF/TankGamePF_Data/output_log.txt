@@ -21,11 +21,11 @@ Platform assembly: C:\Users\lol\Documents\git unity projects\TankGame\GB PF\Tank
 Loading C:\Users\lol\Documents\git unity projects\TankGame\GB PF\TankGamePF_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll into Unity Child Domain
 Platform assembly: C:\Users\lol\Documents\git unity projects\TankGame\GB PF\TankGamePF_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\lol\Documents\git unity projects\TankGame\GB PF\TankGamePF_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.034 seconds
+- Completed reload, in  0.307 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.228786 ms
+UnloadTime: 1.490803 ms
 Create pool MiniExplosion 1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -38,6 +38,34 @@ Create pool Bullet 30
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+PauseGame
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Continue game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+PauseGame
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Continue game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+PauseGame
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Continue game
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+PauseGame
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: da0 -> priority: 1 
-  Thread -> id: 2b0c -> priority: 1 
+  Thread -> id: 3290 -> priority: 1 
+  Thread -> id: 1bec -> priority: 1 

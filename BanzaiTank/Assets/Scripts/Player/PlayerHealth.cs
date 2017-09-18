@@ -10,9 +10,11 @@ public class PlayerHealth : Health {
 	protected Slider healthSlider;
 
 	void Start(){
+		EventManager.StartListening ("OnRestart",Remove);
 		canvas = FindObjectOfType<Canvas> ();
 		healthPanel = Instantiate(healthUIPrefab);
 		healthPanel.transform.SetParent(canvas.transform, false);
+		healthPanel.transform.SetAsFirstSibling ();
 		healthSlider = healthPanel.GetComponentInChildren<Slider> ();
 		Die += OnDead;
 	}
@@ -25,5 +27,11 @@ public class PlayerHealth : Health {
 		Destroy(gameObject);
 		Destroy (healthPanel);
 		EventManager.TriggerEvent ("PlayerDeath");
+	}
+
+	public void Remove(){
+		EventManager.StopListening ("OnRestart", Remove);
+		Destroy(gameObject);
+		Destroy (healthPanel);
 	}
 }

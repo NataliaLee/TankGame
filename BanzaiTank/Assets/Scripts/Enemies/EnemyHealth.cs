@@ -14,7 +14,8 @@ public class EnemyHealth : Health {
 
 	void Start(){
 		canvas = FindObjectOfType<Canvas> ();
-		EventManager.StartListening ("PlayerDeath",OnPlayerDeath);
+		EventManager.StartListening ("PlayerDeath",Remove);
+		EventManager.StartListening ("OnRestart",Remove);
 		Die += OnDead;
 		setHealthPanel ();
 	}
@@ -50,12 +51,10 @@ public class EnemyHealth : Health {
 		enemyManager.SpawnEnemy ();
 	}
 
-	private void OnPlayerDeath(){
-		EventManager.StopListening ("PlayerDeath", OnPlayerDeath);
-		Remove ();
-	}
 
 	private void Remove(){
+		EventManager.StopListening ("PlayerDeath", Remove);
+		EventManager.StopListening ("OnRestart", Remove);
 		gameObject.SetActive (false);
 		Destroy (gameObject);
 		healthPanel.SetActive (false);
